@@ -1,0 +1,18 @@
+{
+    "linting.enabled": true,
+    "themes.theme": "light-theme",
+    "linting.collapsed": false,
+    "brackets-bower.show": false,
+    "hdy.brackets-shell.dark": false,
+    "hdy.brackets-shell.trackProject": true,
+    "hdy.brackets-shell.shell": "cmd.exe",
+    "me.drewh.jsbeautify.on_save": false,
+    "jwolfe.file-tree-exclude.list": [
+        "node_modules",
+        "bower_components",
+        ".git",
+        ".svn",
+        "dist",
+        "vendor"
+    ]
+}
