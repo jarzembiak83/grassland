@@ -1,0 +1,109 @@
+<div class="form">
+    <div class="dx-fieldset">
+        <div class="dx-fieldset-header">Szczegóły profilu</div>
+        <div class="dx-field">
+            <div class="dx-field-label">Nazwa</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.name' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Opis</div>
+            <div class="dx-field-value">
+                <div dx-text-area="{ bindingOptions: { value: 'profileDetails.description' }, maxLenght: 300, height: 200}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Rok założenia</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.yearEstablished' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Język natywny</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.nativeLanguage' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Obroty (ostatni rok)</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.lastYearRevenue' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Liczba zatrudnionych</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.employeesNumber' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Zdolności produkcyjne</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.minQuantityShipped' }}"></div>
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.minQuantityShippedUnit' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Procesy wytwórcze</div>
+            <div class="dx-field-value">
+                <div id="categoryInput" dx-text-box="{ bindingOptions: { value: 'profileDetails.processes' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Materiały</div>
+            <div class="dx-field-value">
+                <div dx-tag-box="{ bindingOptions: { value: 'profileDetails.materials' }, dataSource: materials, valueExpr: 'key', displayExpr:'value', fieldEditEnabled:true }"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Urządzenia</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.machines' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Targi</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.trades' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Nagrody</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.awards' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Certyfikaty</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.certificates' }}"></div>
+            </div>
+        </div>
+
+        <div class="dx-field">
+            <div class="dx-field-label">Aliasy</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.aliasNames' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Języki do komunikacji</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.communicationLanguages' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Konkurencyjne firmy</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.competingIndusties' }}"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Lokalizacje fabryk</div>
+            <div class="dx-field-value">
+                <div dx-text-box="{ bindingOptions: { value: 'profileDetails.factoryLocations' }}"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div ng-controller="ProfileController">
+    <h1>Produkty</h1>
+
+    <div dx-list="products">
+        <div data-options="dxTemplate:{ name :'item' }">
+
+            <div style="display:inline-block; margin: 5px;">
+                <img style="margin:5px;" src="{{imageUrl}}"/>
+            </div>
+            <div style="display:inline-block; margin: 5px;">
+                <p style="font-size:larger;">{{name}}</p>
+            </div>
+            <p>Kategoria: <i>{{category}}</i></p>
+
+            <p>Opis: <i>{{description}}</i></p>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
