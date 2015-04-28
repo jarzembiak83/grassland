@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
     var config = {
         dir: {
-            main: 'src/main/resources/static',
+            main: 'src/main',
             source_js: 'src/main/js',
             provided_js: 'src/main/provided_js',
             provided_css: 'src/main/provided_css',
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
 				tasks: [ 'build' ]
 			},
 			livereload: {
-				files: [ '<%= config.dir.output %>/**/*.{html,css,js,scss}' ],
+				files: [ '<%= config.dir.output %>/**/*.{html,css,js,scss}' ], 
 				options: {
 					livereload: true
 				}

@@ -1,6 +1,6 @@
-<div ng-controller="AnnualPlanViewController as annualPlanVieCtrl">
-    
-    <div ng-repeat="">
-    </div>
-
+<div ng-controller="AnnualPlanViewController as annualPlanViewCtrl">
+        <div ng-repeat="month in months">
+           <span id="{{month.symbol}}">{{month.name}}</span>
+           <span ng-repeat="day in daysOfMonth(($parent.$index)+1)">{{day}}&nbsp</span>
+        </div>
 </div>

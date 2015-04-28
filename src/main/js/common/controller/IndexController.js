@@ -1,3 +1,3 @@
-grasslandsModule.controller('IndexController', ['$scope',
+grasslandModule.controller('IndexController', ['$scope',
     function ($scope) {}
 ]);
