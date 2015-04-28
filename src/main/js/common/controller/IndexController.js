@@ -1,3 +1,3 @@
-panjivaBisModule.controller('IndexController', ['$scope',
+grasslandsModule.controller('IndexController', ['$scope',
     function ($scope) {}
 ]);
