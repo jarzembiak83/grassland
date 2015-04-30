@@ -46,6 +46,10 @@ module.exports = function (grunt) {
             service_js: {
                 src: '<%= config.dir.source_js %>/**/service/*.js',
                 dest: '<%= config.dir.output_js %>/services.js'
+            },
+            directive_js: {
+                src: '<%= config.dir.source_js %>/**/directive/*.js',
+                dest: '<%= config.dir.output_js %>/directives.js'
             }
         },
         copy: {
