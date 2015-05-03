@@ -9,58 +9,60 @@ annualPlanModule.directive('monthPanels', function(){
             $scope.months = [ {
                 name : 'January',
                 symbol : 'JAN',
-                orderNumber: 1
+                orderNumber: 0
             }, {
                 name : 'February',
                 symbol : 'FEB',
-                orderNumber: 2
+                orderNumber: 1
             }, {
                 name : 'March',
                 symbol : 'MAR',
-                orderNumber: 3
+                orderNumber: 2
             }, {
                 name : 'April',
                 symbol : 'APR',
-                orderNumber: 4
+                orderNumber: 3
             }, {
                 name : 'May',
                 symbol : 'MAY',
-                orderNumber: 5
+                orderNumber: 4
             }, {
                 name : 'June',
                 symbol : 'JUN',
-                orderNumber: 6
+                orderNumber: 5
             }, {
                 name : 'July',
                 symbol : 'JUL',
-                orderNumber: 7
+                orderNumber: 6
             }, {
                 name : 'August',
                 symbol : 'AUG',
-                orderNumber: 8
+                orderNumber: 7
             }, {
                 name : 'September',
                 symbol : 'SEP',
-                orderNumber: 9
+                orderNumber: 8
             }, {
                 name : 'October',
                 symbol : 'OCT',
-                orderNumber: 10
+                orderNumber: 9
             }, {
                 name : 'November',
                 symbol : 'NOV',
-                orderNumber: 11
+                orderNumber: 10
             }, {
                 name : 'December',
                 symbol : 'DEC',
-                orderNumber: 12
+                orderNumber: 11
             }];
         
             $scope.daysOfMonth = function(monthOrderNumber) {
-                var numberOfDays = new Date(parseInt($scope.year), monthOrderNumber, 0).getDate();
+            	var seletedMonthDate = new Date(parseInt($scope.year), monthOrderNumber, 1);
                 var arrayOfDays = [];
-                for (i = 1; i<= numberOfDays; i++) {
-                    arrayOfDays.push(i);
+                while (seletedMonthDate.getMonth() == monthOrderNumber) {
+                	var day = {dayOfMonth: seletedMonthDate.getDate(), dayOfWeek:(seletedMonthDate.getDay())};
+                	arrayOfDays.push(day);
+                	seletedMonthDate.setDate(seletedMonthDate.getDate() + 1);
                 }
                 
                 return arrayOfDays;
