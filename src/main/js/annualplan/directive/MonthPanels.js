@@ -60,7 +60,7 @@ annualPlanModule.directive('monthPanels', function(){
             	var seletedMonthDate = new Date(parseInt($scope.year), monthOrderNumber, 1);
                 var arrayOfDays = [];
                 while (seletedMonthDate.getMonth() == monthOrderNumber) {
-                	var day = {dayOfMonth: seletedMonthDate.getDate(), dayOfWeek:(seletedMonthDate.getDay())};
+                	var day = {date: seletedMonthDate.toDateString()};
                 	arrayOfDays.push(day);
                 	seletedMonthDate.setDate(seletedMonthDate.getDate() + 1);
                 }
