@@ -16,6 +16,16 @@ annualPlanModule.directive('monthsSection', function(){
                 }
                 return arrayOfDays;
             };
+            
+            this.calculateEmptyDaysRange = function(monthOrderNumber) {
+                var firstDayOfMonth = new Date(parseInt($scope.year), monthOrderNumber, 1);
+                var emptyDaysRange = [];
+                for(var i=0;i<firstDayOfMonth.getDay();i++) {
+                    emptyDaysRange.push(i);
+                  }
+                
+                return emptyDaysRange;
+            };
         },
         link : function (scope) {
             scope.months = [ {
