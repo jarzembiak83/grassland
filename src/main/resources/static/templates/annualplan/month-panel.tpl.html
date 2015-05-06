@@ -1,0 +1,9 @@
+<style type="text/css">
+div.inline { float:left; }
+.clearBoth { clear:both; }
+</style>
+<span id="{{month.symbol}}">{{month.name}}</span>
+<div class="inline" ng-repeat="day in daysOfMonth"> 
+    <single-day-panel></single-day-panel>
+</div>
+<br class="clearBoth" />

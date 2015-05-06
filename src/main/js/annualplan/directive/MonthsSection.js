@@ -1,12 +1,24 @@
-annualPlanModule.directive('monthPanels', function(){
+annualPlanModule.directive('monthsSection', function(){
     return {
         restrict: 'E',
         scope: {
-            year: '@'
+            year: '='
         },
-        templateUrl: '/templates/annualplan/month-panels.tpl.html',
-        controller: function($scope) {
-            $scope.months = [ {
+        templateUrl: '/templates/annualplan/months-section.tpl.html',
+        controller: function ($scope) {
+            this.calculateDaysOfMonth = function(monthOrderNumber) {
+                var seletedMonthDate = new Date(parseInt($scope.year), monthOrderNumber, 1);
+                var arrayOfDays = [];
+                while (seletedMonthDate.getMonth() == monthOrderNumber) {
+                    var day = {date: seletedMonthDate.toDateString()};
+                    arrayOfDays.push(day);
+                    seletedMonthDate.setDate(seletedMonthDate.getDate() + 1);
+                }
+                return arrayOfDays;
+            };
+        },
+        link : function (scope) {
+            scope.months = [ {
                 name : 'January',
                 symbol : 'JAN',
                 orderNumber: 0
@@ -55,18 +67,6 @@ annualPlanModule.directive('monthPanels', function(){
                 symbol : 'DEC',
                 orderNumber: 11
             }];
-        
-            $scope.daysOfMonth = function(monthOrderNumber) {
-            	var seletedMonthDate = new Date(parseInt($scope.year), monthOrderNumber, 1);
-                var arrayOfDays = [];
-                while (seletedMonthDate.getMonth() == monthOrderNumber) {
-                	var day = {date: seletedMonthDate.toDateString()};
-                	arrayOfDays.push(day);
-                	seletedMonthDate.setDate(seletedMonthDate.getDate() + 1);
-                }
-                
-                return arrayOfDays;
-            };
         }
     }
 });
