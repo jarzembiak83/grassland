@@ -1,0 +1,39 @@
+.group:before, .group:after {
+	content: "";
+	display: table;
+}
+.group:after {
+	clear: both;
+}
+.group {
+	zoom: 1; /* IE6&7 */
+}
+
+.col {
+	padding: 0 1.5em;
+	float: left;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.row .row {
+	margin: 0 -1.5em;
+}
+
+.row:before, .row:after {
+	content: "";
+	display: table;
+}
+.row:after {
+	clear: both;
+}
+
+.daycell {
+    width: 80px;
+    border-radius: 25px;
+    border: 2px solid #8AC007;
+    padding: 20px; 
+}
+
+

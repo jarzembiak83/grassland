@@ -5,6 +5,7 @@ module.exports = function (grunt) {
         dir: {
             main: 'src/main',
             source_js: 'src/main/js',
+            source_scss:'src/main/resources/static/styles',
             provided_js: 'src/main/provided_js',
             provided_css: 'src/main/provided_css',
             output: 'target/classes/static',
@@ -18,7 +19,18 @@ module.exports = function (grunt) {
         config: config,
         pkg: grunt.file.readJSON('package.json'),
 
-        concat: {
+        sass: {
+            dist: {
+              files: [{
+                expand: true,
+                cwd: '<%= config.dir.source_scss %>',
+                src: ['*.scss'],
+                dest: '<%= config.dir.output_css %>',
+                ext: '.css'
+              }]
+            }
+         },
+         concat: {
             options: {
                 stripBanners: true,
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd hh:MM:ss") %> */\n',
@@ -120,13 +132,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-connect-proxy');
-    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-bower-concat');
 
-    grunt.registerTask('build', ['bower_concat', 'concat']);
+    grunt.registerTask('build', ['sass', 'bower_concat', 'concat']);
     grunt.registerTask('serve', ['build', 'configureProxies:server', 'connect:server', 'watch']);
 
 };
