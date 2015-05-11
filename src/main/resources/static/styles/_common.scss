@@ -1,0 +1,22 @@
+/* Common styles - available to use in all modules */
+
+.group {
+    zoom: 1;
+    /* IE6&7 */
+    
+    &:before {
+        content: "";
+        display: table;
+    }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin box-sizing($x) {
+    -webkit-box-sizing: $x;
+    -moz-box-sizing: $x;
+    box-sizing:$x;
+}

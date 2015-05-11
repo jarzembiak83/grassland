@@ -1,7 +1,7 @@
 {
     "linting.enabled": true,
     "themes.theme": "light-theme",
-    "linting.collapsed": false,
+    "linting.collapsed": true,
     "brackets-bower.show": false,
     "hdy.brackets-shell.dark": false,
     "hdy.brackets-shell.trackProject": true,
