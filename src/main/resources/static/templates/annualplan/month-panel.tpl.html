@@ -1,7 +1,7 @@
 <div id="{{month.symbol}}">{{month.name}}</div>
-<div class="cell daycell" ng-repeat="n in emptyDaysRange" >
+<div ng-repeat="n in emptyDaysRange" >
     <single-day-panel></single-day-panel>
 </div>
-<div class="cell daycell" ng-repeat="day in daysOfMonth"> 
-    <single-day-panel></single-day-panel>
+<div ng-repeat="day in daysOfMonth"> 
+    <single-day-panel day="day"></single-day-panel>
 </div>
