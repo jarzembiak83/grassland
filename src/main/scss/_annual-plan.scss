@@ -1,14 +1,14 @@
 /* Styles for annual plan module */
 $normal-day-color: #8AC004;
-$weekend-day-color: #AABBFF;
+$weekend-day-color: #AAAAFF;
 $empty-day-color: #000000;
-$daycell-width: 60px;
+$daycell-width: 10px;
 
 @mixin daycell {
     float: left;
     width: $daycell-width;
-    border-radius: 15px;
-    padding: 0 1.5em;
+    border-radius: 8px;
+    padding: 0 0.8em;
 	@include box-sizing(border-box);
 }
 
