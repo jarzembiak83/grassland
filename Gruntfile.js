@@ -5,7 +5,8 @@ module.exports = function (grunt) {
         dir: {
             main: 'src/main',
             source_js: 'src/main/js',
-            source_scss:'src/main/resources/static/styles',
+            source_scss:'src/main/scss',
+            source_static_resources: 'src/main/resources/static',
             provided_js: 'src/main/provided_js',
             provided_css: 'src/main/provided_css',
             output: 'target/classes/static',
@@ -64,8 +65,6 @@ module.exports = function (grunt) {
                 dest: '<%= config.dir.output_js %>/directives.js'
             }
         },
-        copy: {
-        },
         bower_concat: {
             all: {
                 dest: '<%= config.dir.output_js %>/_bower.js',
@@ -81,6 +80,14 @@ module.exports = function (grunt) {
                     'globalize': 'lib/globalize.js'
                 }
             }
+        },
+        copy: {
+            html_templates: {
+				expand: true,
+				cwd: '<%= config.dir.source_static_resources %>',
+				src: '**/*.html',
+				dest: '<%= config.dir.output %>'
+			}
         },
         watch: {
 			concat_app: {
@@ -138,7 +145,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-bower-concat');
 
-    grunt.registerTask('build', ['sass', 'bower_concat', 'concat']);
+    grunt.registerTask('build', ['sass', 'bower_concat', 'concat', 'copy']);
     grunt.registerTask('serve', ['build', 'configureProxies:server', 'connect:server', 'watch']);
 
 };

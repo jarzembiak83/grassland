@@ -1,0 +1,28 @@
+/* Styles for annual plan module */
+$normal-day-color: #8AC004;
+$weekend-day-color: #AABBFF;
+$empty-day-color: #000000;
+$daycell-width: 60px;
+
+@mixin daycell {
+    float: left;
+    width: $daycell-width;
+    border-radius: 15px;
+    padding: 0 1.5em;
+	@include box-sizing(border-box);
+}
+
+.normal-daycell {
+    @include daycell;
+    border: 2px solid $normal-day-color;
+}
+
+.weekend-daycell {
+    @include daycell;
+    border: 2px solid $weekend-day-color;
+}
+
+.empty-day-placeholder {
+    @include daycell;
+    border: 2px solid $empty-day-color;
+}

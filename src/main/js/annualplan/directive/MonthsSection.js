@@ -20,7 +20,9 @@ annualPlanModule.directive('monthsSection', function(){
             this.calculateEmptyDaysRange = function(monthOrderNumber) {
                 var firstDayOfMonth = new Date(parseInt($scope.year), monthOrderNumber, 1);
                 var emptyDaysRange = [];
-                for(var i=0;i<firstDayOfMonth.getDay();i++) {
+                var numberOfEmptyDaysToMonday = (firstDayOfMonth.getDay()+6) % 7;
+                
+                for(var i=0;i<numberOfEmptyDaysToMonday;i++) {
                     emptyDaysRange.push(i);
                   }
                 
